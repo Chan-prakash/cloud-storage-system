@@ -5,7 +5,7 @@
     <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.7.9</version> <!-- or the latest stable version you want -->
+    <version>3.1.2</version> <!-- or the latest stable version you want -->
     <relativePath/> <!-- lookup parent from repository -->
 </parent>
     <groupId>com.example</groupId>

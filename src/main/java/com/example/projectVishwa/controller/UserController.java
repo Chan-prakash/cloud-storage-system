@@ -1,16 +1,12 @@
 package com.example.projectVishwa.controller;
-
 import com.example.projectVishwa.model.User;
 import com.example.projectVishwa.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-
 import java.util.List;
 
-
 @RestController
-@RequestMapping("/api/users") // Base API path for user-related actions
+@RequestMapping("/api/users")
 public class UserController {
 
     @Autowired
@@ -31,8 +27,7 @@ public class UserController {
     // Endpoint to find a user by email
     @GetMapping("/find/{email}")
     public User findUserByEmail(@PathVariable String email) {
-        return userRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("User not found"));
+        return userRepository.findByEmail(email)
+            .orElseThrow(() -> new RuntimeException("User not found"));
     }
 }
-
-

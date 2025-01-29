@@ -1,7 +1,6 @@
 package com.example.projectVishwa.model;
 
-import javax.persistence.*;
-
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Users") // Map the class to the table explicitly
