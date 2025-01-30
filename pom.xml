@@ -5,7 +5,7 @@
     <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.1.2</version> <!-- or the latest stable version you want -->
+    <version>3.4.2</version> <!-- or the latest stable version you want -->
     <relativePath/> <!-- lookup parent from repository -->
 </parent>
     <groupId>com.example</groupId>
@@ -14,7 +14,7 @@
     <name>projectVishwa</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>21</java.version>
+        <java.version>17</java.version>
     </properties>
 
        <dependencies>
@@ -43,6 +43,38 @@
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
     </dependency>
+   <!-- Google API Client Library -->
+
+
+<!-- Google Drive API -->
+          <!-- Google API Client (Remove if using GoogleCredentials) -->
+<dependency>
+    <groupId>com.google.api-client</groupId>
+    <artifactId>google-api-client</artifactId>
+    <version>1.32.1</version>
+</dependency>
+
+<!-- Google Drive API -->
+<dependency>
+    <groupId>com.google.apis</groupId>
+    <artifactId>google-api-services-drive</artifactId>
+    <version>v3-rev197-1.25.0</version>
+</dependency>
+
+<!-- Google Auth Library (Required for GoogleCredentials) -->
+<dependency>
+    <groupId>com.google.auth</groupId>
+    <artifactId>google-auth-library-oauth2-http</artifactId>
+    <version>1.19.0</version>
+</dependency>
+
+<!-- Google HTTP Client (Replaces deprecated JacksonFactory dependency) -->
+<dependency>
+    <groupId>com.google.http-client</groupId>
+    <artifactId>google-http-client-gson</artifactId>
+    <version>1.42.3</version>
+</dependency>
+
 
     <!-- Spring Boot Starter Security (No version needed) -->
     <dependency>
@@ -57,11 +89,19 @@
     </dependency>
 </dependencies>
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
+        
+           <plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        
+        <configuration>
+            <source>17</source> <!-- Change this to your supported version -->
+            <target>17</target> <!-- Change this to your supported version -->
+        </configuration>
+    </plugin>
+</plugins>
+
+  
     </build>
 </project>
